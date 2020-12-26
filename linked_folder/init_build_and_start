@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo ""
+echo "========"
+echo "init ros"
+echo "========"
+echo ""
+. /opt/ros/kinetic/setup.bash
+
+echo ""
+echo "==============="
+echo "building ros ws"
+echo "==============="
+echo ""
+cd /home/catkin_ws
+catkin_make
+. /home/catkin_ws/devel/setup.bash
+cd /
+
+echo ""
+echo "=============================="
+echo "launching chord_detection node"
+echo "=============================="
+echo ""
+roslaunch chord_detection chord_detection.launch
