@@ -3,14 +3,14 @@
     pkg="chord_detection"
     type="mic_publisher_thread.py"
     name="mic_publisher"
-    output="log"
+    output="screen"
+    launch-prefix="xterm -e"
   />
-  <!-- output="screen" -->
   <node
     pkg="chord_detection"
     type="chord_detection_node"
     name="chord_detection"
 		output="screen"
+    launch-prefix="xterm -e"
   />
-  <!-- launch-prefix="xterm -e" -->
 </launch>

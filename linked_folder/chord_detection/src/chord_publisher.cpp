@@ -4,7 +4,7 @@
 #include "Chromagram.h"
 #include "ChordDetector.h"
 
-#define NUM_SAMPLES 4096
+#define NUM_SAMPLES 8192
 #define RATE 44100
 
 std::vector<std::string> chordFundamental = {"C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"};
