@@ -7,7 +7,7 @@
 #define NUM_SAMPLES 4096
 #define RATE 44100
 
-std::vector<std::string> ChordFundamental = {"C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"};
+std::vector<std::string> chordFundamental = {"C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"};
 std::string chordString;
 
 Chromagram* chromagram;
@@ -30,33 +30,33 @@ void micInCallback(const std_msgs::Float32MultiArray::ConstPtr& recvMsg)
       switch (chordDetector->quality) {
         case ChordDetector::ChordQuality::Major:
           if (chordDetector->intervals == 0) {
-            chordString = ChordFundamental[chordDetector->rootNote];
+            chordString = chordFundamental[chordDetector->rootNote];
           } else { // == 7
-            chordString = ChordFundamental[chordDetector->rootNote] + "maj7";//"\u03947";
+            chordString = chordFundamental[chordDetector->rootNote] + "maj7";//"\u03947";
           }
           break;
         case ChordDetector::ChordQuality::Minor:
           if (chordDetector->intervals == 0) {
-            chordString = ChordFundamental[chordDetector->rootNote] + "-";
+            chordString = chordFundamental[chordDetector->rootNote] + "-";
           } else { // == 7
-            chordString = ChordFundamental[chordDetector->rootNote] + "-7";
+            chordString = chordFundamental[chordDetector->rootNote] + "-7";
           }
           break;
         case ChordDetector::ChordQuality::Dominant:
-          chordString = ChordFundamental[chordDetector->rootNote] + "7";
+          chordString = chordFundamental[chordDetector->rootNote] + "7";
           break;
         case ChordDetector::ChordQuality::Suspended:
           if (chordDetector->intervals == 2) {
-            chordString = ChordFundamental[chordDetector->rootNote] + "sus2";
+            chordString = chordFundamental[chordDetector->rootNote] + "sus2";
           } else if (chordDetector->intervals == 4) {
-            chordString = ChordFundamental[chordDetector->rootNote] + "sus4";
+            chordString = chordFundamental[chordDetector->rootNote] + "sus4";
           }
           break;
-        case ChordDetector::ChordQuality::Dimished5th:
-          chordString = ChordFundamental[chordDetector->rootNote] + "dim";//"\u26AC";
+        case ChordDetector::ChordQuality::Diminished5th:
+          chordString = chordFundamental[chordDetector->rootNote] + "dim";//"\u26AC";
           break;
         case ChordDetector::ChordQuality::Augmented5th:
-          chordString = ChordFundamental[chordDetector->rootNote] + "aug";
+          chordString = chordFundamental[chordDetector->rootNote] + "aug";
           break;
       }
       // std::cout << "Chromagram: ";

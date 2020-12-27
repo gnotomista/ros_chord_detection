@@ -29,7 +29,7 @@
 class ChordDetector
 {
 public:
-    
+
     /** An enum describing the chord qualities used in the algorithm */
     enum ChordQuality
     {
@@ -37,32 +37,32 @@ public:
         Major,
         Suspended,
         Dominant,
-        Dimished5th,
+        Diminished5th,
         Augmented5th
     };
-    
+
 	/** Constructor */
 	ChordDetector();
-    
-    /** Detects the chord from a chromagram. This is the vector interface 
+
+    /** Detects the chord from a chromagram. This is the vector interface
      * @param chroma a vector of length 12 containing the chromagram
      */
     void detectChord (std::vector<double> chroma);
-    
+
     /** Detects the chord from a chromagram. This is the array interface
      * @param chroma an array of length 12 containing the chromagram
      */
     void detectChord (double* chroma);
-	
+
     /** The root note of the detected chord */
 	int rootNote;
-    
+
     /** The quality of the detected chord (Major, Minor, etc) */
 	int quality;
-    
+
     /** Any other intervals that describe the chord, e.g. 7th */
 	int intervals;
-	
+
 private:
 	void makeChordProfiles();
 	void classifyChromagram();
