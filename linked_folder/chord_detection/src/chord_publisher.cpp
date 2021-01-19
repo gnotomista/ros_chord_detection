@@ -31,14 +31,14 @@ void micInCallback(const std_msgs::Float32MultiArray::ConstPtr& recvMsg)
         case ChordDetector::ChordQuality::Major:
           if (chordDetector->intervals == 0) {
             chordString = chordFundamental[chordDetector->rootNote];
-          } else { // == 7
+          } else if (chordDetector->intervals == 7) {
             chordString = chordFundamental[chordDetector->rootNote] + "maj7";//"\u03947";
           }
           break;
         case ChordDetector::ChordQuality::Minor:
           if (chordDetector->intervals == 0) {
             chordString = chordFundamental[chordDetector->rootNote] + "-";
-          } else { // == 7
+          } else if (chordDetector->intervals == 7) {
             chordString = chordFundamental[chordDetector->rootNote] + "-7";
           }
           break;
