@@ -10,7 +10,7 @@
     pkg="chord_detection"
     type="chord_detection_node"
     name="chord_detection"
-		output="screen"
+    output="screen"
     launch-prefix="xterm -e"
   />
 </launch>
