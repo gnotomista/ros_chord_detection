@@ -3,7 +3,7 @@ ROS package for chord detection from audio signal captured from microphone. All 
 
 The chord detection algorithm used is developed in *Real-Time Chord Recognition For Live Performance, A. M. Stark and M. D. Plumbley. In Proceedings of the 2009 International Computer Music Conference (ICMC 2009), Montreal, Canada, 16-21 August 2009* and the code can be found on GitHub [here](https://github.com/adamstark/Chord-Detector-and-Chromagram).
 
-The whole ROS-based backend used for chord detection is containerized for portability. Example scripts to interface with the backend are provided in Python and MATLAB. See below for getting the system running.
+The whole ROS-based backend used for chord detection is containerized for portability. Example scripts to interface with the backend are provided in Python and MATLAB. Check out [this video](https://youtu.be/hf0-Ff4rqx4) for an example of the system running!
 
 ## Setup
 1. Install [Docker](https://docs.docker.com/engine/install/)
