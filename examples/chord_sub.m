@@ -31,13 +31,13 @@ switch chordQuality
     case CHORD_QUALITY.Major
         if chordIntervals == 0
             chordString = CHORD_FUNDAMENTAL{chordRootNote+1};
-        else % == 7
+        elseif chordIntervals == 7
             chordString = [CHORD_FUNDAMENTAL{chordRootNote+1}, 'maj7'];
         end
     case CHORD_QUALITY.Minor
         if chordIntervals == 0
             chordString = [CHORD_FUNDAMENTAL{chordRootNote+1}, '-'];
-        else % == 7
+        elseif chordIntervals == 7
             chordString = [CHORD_FUNDAMENTAL{chordRootNote+1}, '-7'];
         end
     case CHORD_QUALITY.Dominant
@@ -45,7 +45,7 @@ switch chordQuality
     case CHORD_QUALITY.Suspended
         if chordIntervals == 2
             chordString = [CHORD_FUNDAMENTAL{chordRootNote+1}, 'sus2'];
-        elseif chordIntervals
+        elseif chordIntervals == 4
             chordString = [CHORD_FUNDAMENTAL{chordRootNote+1}, 'sus4'];
         end
     case CHORD_QUALITY.Diminished5th

@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y python-matplotlib
 RUN apt-get update && apt-get install -y fftw3-dev
 
 # copy in init_build_and_start script
-COPY ../linked_folder/init_build_and_start /home/init_build_and_start
+COPY linked_folder/init_build_and_start /home/init_build_and_start
 
 # remove not working ros entrypoint
 RUN rm /ros_entrypoint.sh
